@@ -1,4 +1,4 @@
-# Adexa-Adaptive-Study-Schedule-Generator-
+# Adexa(Adaptive Study Schedule Generator)
 A simple Qt Widgets application that generates personalized study schedules based on subjects, their difficulty, importance, and topics. This desktop app helps students organize their study time effectively across multiple days and hours per day.
 
 ## Features
