@@ -1,69 +1,35 @@
 # Adexa(Adaptive Study Schedule Generator)
 A simple Qt Widgets application that generates personalized study schedules based on subjects, their difficulty, importance, and topics. This desktop app helps students organize their study time effectively across multiple days and hours per day.
+## 🛠 Build & Run with CMake (VS Code)
 
-## Features
+Follow these steps if you want to build the project using CMake inside VS Code:
 
-- **Add Subjects** with:
-  - Name
-  - Difficulty (1–10)
-  - Importance (1–10)
-  - List of topics (one per line)
-  
-- **Schedule Generation**
-  - Allocates study hours proportionally based on difficulty, importance, and number of topics
-  - Cyclic repetition of topics if needed
-  - Time distributed across all available days and hours per day
-  - Limits maximum continuous study slot per topic to 2 hours
-  
-- **Interactive UI**
-  - Add, remove, and edit subjects
-  - Set total study days and hours per day
-  - View generated schedule in a table with day-wise subject, topic, and time slots
-  - Save generated schedule as a CSV file for external use
+1. Install prerequisites  
+   - Install Qt (make sure qmake and CMake can find it).  
+   - Install a compiler:  
+     - MinGW or MSVC (Windows)  
+     - g++/clang (Linux/macOS).  
 
-## UI Overview
+2. Project setup  
+   - Place your main.cpp file in the project folder.  
+   - Create a CMakeLists.txt file in the same folder with the build instructions.  
 
-- **Schedule Settings**: Configure number of days and daily study hours.
-- **Subjects Table**: Manage the list of subjects and their parameters.
-- **Generated Schedule**: Displays the detailed study plan per day.
-- **Buttons**:
-  - Add Subject
-  - Remove Selected Subject
-  - Generate Schedule
-  - Save CSV
-  - Clear Schedule
+3. Open in VS Code  
+   - Open the folder in VS Code.  
+   - Install the CMake Tools extension (if not already installed).  
 
-## How It Works
+4. Configure CMake  
+   - VS Code will detect CMakeLists.txt.  
+   - Select the Qt kit/toolchain (for example: MinGW 64-bit with Qt).  
+   - Run CMake: Configure to generate build files.  
 
-1. **Input Subjects**: Enter subjects with their difficulty, importance, and topics.
-2. **Set Schedule Parameters**: Specify total study days and hours per day.
-3. **Generate Schedule**: The app calculates weights for each subject and distributes available time proportionally.
-4. **View & Save**: The generated plan is displayed and can be saved in CSV format.
+5. Build the project  
+   - Press Ctrl+Shift+B (or use CMake: Build).  
+   - This will compile the executable (e.g., StudyScheduleGenerator).  
 
-## Dependencies
+6. Run the project  
+   - Press F5 (or CMake: Run Without Debugging).  
+   - The Qt application window will launch.  
 
-- Qt 5 or later (Widgets module)
-- Standard C++17 (or later) compatible compiler
-
-## Build Instructions
-
-1. Ensure Qt development environment is set up (Qt Creator or qmake + compiler).
-2. Place the provided `main.cpp` in your Qt project.
-3. Build and run the project.
-4. The app window will open allowing you to add subjects and generate schedules.
-
-## Code Highlights
-
-- **Subject class**: Holds subject data and topic list.
-- **ScheduleGenerator**: Core logic that assigns study hours based on weights.
-- **AddSubjectDialog**: Modal dialog to input subject details.
-- **MainWindow**: Main UI handling subject management and schedule display.
-- Time formatting converts decimal hours into human-readable "Xh Ym" format.
-- Schedule generation allows cyclic topic assignment and respects max 2-hour chunks per task.
-
-## Future Improvements
-
-- Support editing existing subjects.
-- Add user profile saving/loading.
-- Include break suggestions and study reminders.
-- Add prioritization based on deadlines or exam dates.
+7. Done  
+   - You now have the Study Schedule Generator running via CMake inside VS Code.
